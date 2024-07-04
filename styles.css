@@ -1,0 +1,189 @@
+/* styles.css */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--bg-color);
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.calculator {
+    border-radius: 20px;
+    overflow: hidden;
+    width: 320px;
+    background-color: var(--calculator-bg-color);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.display-section {
+    background-color: var(--display-bg-color);
+    color: var(--display-text-color);
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.equation, .display {
+    font-size: 1.2em;
+    text-align: right;
+}
+
+.equation {
+    color: var(--equation-color);
+    min-height: 30px;
+}
+
+.display {
+    font-size: 2.5em;
+    min-height: 40px;
+}
+
+.previous-results {
+    font-size: 0.8em;
+    color: var(--previous-results-color);
+    max-height: 50px;
+    overflow-y: auto;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1px;
+    padding: 10px;
+}
+
+.btn {
+    background-color: var(--button-bg-color);
+    border: none;
+    padding: 20px;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    color: var(--button-text-color);
+}
+
+.btn:hover {
+    background-color: var(--button-hover-bg-color);
+}
+
+.operator {
+    background-color: var(--operator-bg-color);
+}
+
+.operator:hover {
+    background-color: var(--operator-hover-bg-color);
+}
+
+#equals {
+    background-color: var(--equals-bg-color);
+    color: var(--equals-text-color);
+    grid-column: span 2;
+}
+
+#equals:hover {
+    background-color: var(--equals-hover-bg-color);
+}
+
+#clear, #backspace {
+    background-color: var(--clear-backspace-bg-color);
+}
+
+#clear:hover, #backspace:hover {
+    background-color: var(--clear-backspace-hover-bg-color);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 20px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(14px);
+}
+
+/* Light Theme */
+:root {
+    --bg-color: #f0f0f0;
+    --calculator-bg-color: #ffffff;
+    --display-bg-color: #f9f9f9;
+    --display-text-color: #000000;
+    --border-color: #cccccc;
+    --equation-color: #888888;
+    --previous-results-color: #555555;
+    --button-bg-color: #e0e0e0;
+    --button-text-color: #000000;
+    --button-hover-bg-color: #d0d0d0;
+    --operator-bg-color: #ff9500;
+    --operator-hover-bg-color: #e08700;
+    --equals-bg-color: #2196F3;
+    --equals-text-color: #ffffff;
+    --equals-hover-bg-color: #1976D2;
+    --clear-backspace-bg-color: #ff3b30;
+    --clear-backspace-hover-bg-color: #d32f2f;
+}
+
+/* Dark Theme */
+body.dark {
+    --bg-color: #121212;
+    --calculator-bg-color: #1e1e1e;
+    --display-bg-color: #2c2c2c;
+    --display-text-color: #ffffff;
+    --border-color: #3c3c3c;
+    --equation-color: #bbbbbb;
+    --previous-results-color: #777777;
+    --button-bg-color: #3c3c3c;
+    --button-text-color: #ffffff;
+    --button-hover-bg-color: #555555;
+    --operator-bg-color: #ff9500;
+    --operator-hover-bg-color: #e08700;
+    --equals-bg-color: #2196F3;
+    --equals-text-color: #ffffff;
+    --equals-hover-bg-color: #1976D2;
+    --clear-backspace-bg-color: #ff3b30;
+    --clear-backspace-hover-bg-color: #d32f2f;
+}
